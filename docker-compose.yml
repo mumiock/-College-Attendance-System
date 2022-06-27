@@ -1,0 +1,23 @@
+version: '3.5'
+# bu sadece database çalıştırır
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-12345}
+      PGDATA: /var/lib/postgresql/data/
+    volumes:
+      - ./data:/var/lib/postgresql/data 
+    ports:
+      - "5041:5432"
+    networks: 
+      - postgres
+    restart: unless-stopped
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+    postgres:
