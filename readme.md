@@ -7,3 +7,5 @@ Before run the project:
 3-Run project with "python3.8 manage.py runserver" on your terminal.
 
 4-Now you can use! localhost:8000
+
+5-admin access username "admin"  password "183927qw"
